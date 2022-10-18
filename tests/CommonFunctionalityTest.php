@@ -40,18 +40,6 @@ class CommonFunctionalityTest extends TestCase
         ],
     ];
 
-    /** @var string[] */
-    protected $rules = [
-        'user' => [
-            'array',
-        ],
-        'user.email' => [
-            'string',
-            'email',
-        ],
-        'user.age' => 'integer',
-    ];
-
     public function setUp(): void
     {
         parent::setUp();
@@ -383,7 +371,6 @@ class CommonFunctionalityTest extends TestCase
     public function testValidateData(string $modelType)
     {
         $model = $this->getModelByType($modelType);
-        $model->settingsRules = $this->rules;
 
         $model->settings()->clear();
         $this->assertEquals([], $model->settings()->all());

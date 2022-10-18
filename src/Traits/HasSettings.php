@@ -12,13 +12,14 @@ use Illuminate\Support\Arr;
  */
 trait HasSettings
 {
+    public function settingsRules(): array
+    {
+        return [];
+    }
+
     public function getRules(): array
     {
-        if (property_exists($this, 'settingsRules') && is_array($this->settingsRules)) {
-            return $this->settingsRules;
-        }
-
-        return [];
+        return $this->settingsRules();
     }
 
     public function getDefaultSettings(): array

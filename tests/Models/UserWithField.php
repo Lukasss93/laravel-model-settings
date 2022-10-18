@@ -24,5 +24,17 @@ class UserWithField extends Model
 
     public $defaultSettings = [];
 
-    public $settingsRules = [];
+    public function settingsRules(): array
+    {
+        return [
+            'user' => [
+                'array',
+            ],
+            'user.email' => [
+                'string',
+                'email',
+            ],
+            'user.age' => 'integer',
+        ];
+    }
 }

@@ -19,4 +19,18 @@ class WrongUserWithField extends Model
     protected $guarded = [];
 
     protected $fillable = ['id', 'name'];
+
+    public function settingsRules(): array
+    {
+        return [
+            'user' => [
+                'array',
+            ],
+            'user.email' => [
+                'string',
+                'email',
+            ],
+            'user.age' => 'integer',
+        ];
+    }
 }
