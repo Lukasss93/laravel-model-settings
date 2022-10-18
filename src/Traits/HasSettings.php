@@ -22,7 +22,7 @@ trait HasSettings
         if (property_exists($this, 'defaultSettings')
             && is_array($this->defaultSettings)) {
             return Arr::wrap($this->defaultSettings);
-        } elseif (($defaultSettings = config('model_settings.defaultSettings.' . $this->getTable()))
+        } elseif (($defaultSettings = config('model_settings.defaultSettings.'.$this->getTable()))
             && is_array($defaultSettings)) {
             return Arr::wrap($defaultSettings);
         }
@@ -42,4 +42,30 @@ trait HasSettings
     abstract public function getSettingsValue(): array;
 
     abstract public function settings(): SettingsManagerContract;
+
+    public static function bootHasSettings()
+    {
+        $init = function ($model) {
+            if (property_exists($model, 'initSettings') && $model->initSettings) {
+                $model->initSettings();
+            }
+        };
+
+        static::created($init);
+        static::updated($init);
+    }
+
+    public function initSettings(): void
+    {
+        if (!$this->modelSettings()->exists()) {
+            $this->settings()->apply($this->getDefaultSettings());
+        }
+    }
+
+    public static function initSettingsForAll(): void
+    {
+        static::all()->each(function ($model) {
+            $model->initSettings();
+        });
+    }
 }
