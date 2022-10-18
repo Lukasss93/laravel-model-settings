@@ -17,11 +17,6 @@ trait HasSettings
         return [];
     }
 
-    public function getRules(): array
-    {
-        return $this->settingsRules();
-    }
-
     public function getDefaultSettings(): array
     {
         if (property_exists($this, 'defaultSettings')
