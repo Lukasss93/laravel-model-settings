@@ -13,14 +13,20 @@ use Glorand\Model\Settings\Tests\Models\UserWithTextField;
 use Glorand\Model\Settings\Tests\Models\WrongUser;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Schema;
 use Lunaweb\RedisMock\Providers\RedisMockServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 abstract class TestCase extends OrchestraTestCase
 {
-    public function setUp(): void
+    protected function getPackageProviders($app)
+    {
+        return [
+            ModelSettingsServiceProvider::class,
+        ];
+    }
+
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -31,13 +37,6 @@ abstract class TestCase extends OrchestraTestCase
     protected function checkRequirements()
     {
         //
-    }
-
-    protected function getPackageProviders($app)
-    {
-        return [
-            ModelSettingsServiceProvider::class,
-        ];
     }
 
     public function getEnvironmentSetUp($app)

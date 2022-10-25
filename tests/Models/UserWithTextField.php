@@ -22,8 +22,6 @@ class UserWithTextField extends Model
 
     protected $fillable = ['id', 'name'];
 
-    public $defaultSettings = [];
-
     public function settingsRules(): array
     {
         return [

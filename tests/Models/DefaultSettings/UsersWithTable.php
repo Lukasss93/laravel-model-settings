@@ -1,6 +1,6 @@
 <?php
 
-namespace Glorand\Model\Settings\Tests\Models;
+namespace Glorand\Model\Settings\Tests\Models\DefaultSettings;
 
 use Glorand\Model\Settings\Contracts\SettingsManagerContract;
 use Glorand\Model\Settings\Traits\HasSettingsTable;
@@ -23,6 +23,16 @@ class UsersWithTable extends Model
     protected $guarded = [];
 
     protected $fillable = ['id', 'name'];
+
+    public function defaultSettings(): array
+    {
+        return [
+            'config' => [
+                'email' => 'gmail',
+                'file' => 'aws',
+            ],
+        ];
+    }
 
     public function settingsRules(): array
     {

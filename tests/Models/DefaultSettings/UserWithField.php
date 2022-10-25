@@ -1,6 +1,6 @@
 <?php
 
-namespace Glorand\Model\Settings\Tests\Models;
+namespace Glorand\Model\Settings\Tests\Models\DefaultSettings;
 
 use Glorand\Model\Settings\Traits\HasSettingsField;
 use Illuminate\Database\Eloquent\Model;
@@ -21,6 +21,16 @@ class UserWithField extends Model
     protected $guarded = [];
 
     protected $fillable = ['id', 'name'];
+
+    public function defaultSettings(): array
+    {
+        return [
+            'config' => [
+                'email' => 'gmail',
+                'file' => 'aws',
+            ],
+        ];
+    }
 
     public function settingsRules(): array
     {
