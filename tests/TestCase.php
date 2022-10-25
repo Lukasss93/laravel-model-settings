@@ -1,16 +1,16 @@
 <?php
 
-namespace Glorand\Model\Settings\Tests;
+namespace Lukasss93\ModelSettings\Tests;
 
 use CreateModelSettingsTable;
-use Glorand\Model\Settings\ModelSettingsServiceProvider;
-use Glorand\Model\Settings\Tests\Models\Article;
-use Glorand\Model\Settings\Tests\Models\User;
-use Glorand\Model\Settings\Tests\Models\UsersWithTable;
-use Glorand\Model\Settings\Tests\Models\UserWithField;
-use Glorand\Model\Settings\Tests\Models\UserWithRedis;
-use Glorand\Model\Settings\Tests\Models\UserWithTextField;
-use Glorand\Model\Settings\Tests\Models\WrongUser;
+use Lukasss93\ModelSettings\ModelSettingsServiceProvider;
+use Lukasss93\ModelSettings\Tests\Models\Article;
+use Lukasss93\ModelSettings\Tests\Models\User;
+use Lukasss93\ModelSettings\Tests\Models\UsersWithTable;
+use Lukasss93\ModelSettings\Tests\Models\UserWithField;
+use Lukasss93\ModelSettings\Tests\Models\UserWithRedis;
+use Lukasss93\ModelSettings\Tests\Models\UserWithTextField;
+use Lukasss93\ModelSettings\Tests\Models\WrongUser;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -97,7 +97,7 @@ abstract class TestCase extends OrchestraTestCase
 
     /**
      * @param string $type
-     * @return \Illuminate\Database\Eloquent\Model|\Glorand\Model\Settings\Traits\HasSettings
+     * @return \Illuminate\Database\Eloquent\Model|\Lukasss93\ModelSettings\Traits\HasSettings
      */
     protected function getModelByType(string $type): Model
     {

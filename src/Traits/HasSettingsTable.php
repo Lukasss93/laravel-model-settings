@@ -1,16 +1,16 @@
 <?php
 
-namespace Glorand\Model\Settings\Traits;
+namespace Lukasss93\ModelSettings\Traits;
 
-use Glorand\Model\Settings\Contracts\SettingsManagerContract;
-use Glorand\Model\Settings\Managers\TableSettingsManager;
-use Glorand\Model\Settings\Models\ModelSettings;
+use Lukasss93\ModelSettings\Contracts\SettingsManagerContract;
+use Lukasss93\ModelSettings\Managers\TableSettingsManager;
+use Lukasss93\ModelSettings\Models\ModelSettings;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Support\Facades\Cache;
 
 /**
  * Trait HasSettingsTable
- * @package Glorand\Model\Settings\Traits
+ * @package Lukasss93\ModelSettings\Traits
  * @property ModelSettings $modelSettings
  * @property array $settings
  * @method morphOne($model, $name)
@@ -20,8 +20,8 @@ trait HasSettingsTable
     use HasSettings;
 
     /**
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
-     * @throws \Glorand\Model\Settings\Exceptions\ModelSettingsException
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
+     * @throws \Lukasss93\ModelSettings\Exceptions\ModelSettingsException
      */
     public function settings(): SettingsManagerContract
     {

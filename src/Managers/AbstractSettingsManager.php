@@ -1,17 +1,17 @@
 <?php
 
-namespace Glorand\Model\Settings\Managers;
+namespace Lukasss93\ModelSettings\Managers;
 
-use Glorand\Model\Settings\Contracts\SettingsManagerContract;
-use Glorand\Model\Settings\Exceptions\ModelSettingsException;
-use Glorand\Model\Settings\Traits\HasSettings;
+use Lukasss93\ModelSettings\Contracts\SettingsManagerContract;
+use Lukasss93\ModelSettings\Exceptions\ModelSettingsException;
+use Lukasss93\ModelSettings\Traits\HasSettings;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Validator;
 
 /**
  * Class AbstractSettingsManager
- * @package Glorand\Model\Settings\Managers
+ * @package Lukasss93\ModelSettings\Managers
  * @SuppressWarnings(PHPMD.StaticAccess)
  */
 abstract class AbstractSettingsManager implements SettingsManagerContract
@@ -25,7 +25,7 @@ abstract class AbstractSettingsManager implements SettingsManagerContract
     /**
      * AbstractSettingsManager constructor.
      * @param \Illuminate\Database\Eloquent\Model|HasSettings $model
-     * @throws \Glorand\Model\Settings\Exceptions\ModelSettingsException
+     * @throws \Lukasss93\ModelSettings\Exceptions\ModelSettingsException
      */
     public function __construct(Model $model)
     {
@@ -154,7 +154,7 @@ abstract class AbstractSettingsManager implements SettingsManagerContract
     /**
      * @param string $path
      * @param $value
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
      */
     public function set(string $path, $value): SettingsManagerContract
     {
@@ -167,7 +167,7 @@ abstract class AbstractSettingsManager implements SettingsManagerContract
     /**
      * @param string $path
      * @param mixed $value
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
      */
     public function update(string $path, $value): SettingsManagerContract
     {
@@ -176,7 +176,7 @@ abstract class AbstractSettingsManager implements SettingsManagerContract
 
     /**
      * @param string|null $path
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
      */
     public function delete(string $path = null): SettingsManagerContract
     {
@@ -193,7 +193,7 @@ abstract class AbstractSettingsManager implements SettingsManagerContract
     }
 
     /**
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
      */
     public function clear(): SettingsManagerContract
     {
@@ -202,7 +202,7 @@ abstract class AbstractSettingsManager implements SettingsManagerContract
 
     /**
      * @param iterable $values
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
      */
     public function setMultiple(iterable $values): SettingsManagerContract
     {
@@ -216,7 +216,7 @@ abstract class AbstractSettingsManager implements SettingsManagerContract
 
     /**
      * @param iterable $paths
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
      */
     public function deleteMultiple(iterable $paths): SettingsManagerContract
     {

@@ -1,17 +1,17 @@
 <?php
 
-namespace Glorand\Model\Settings\Traits;
+namespace Lukasss93\ModelSettings\Traits;
 
-use Glorand\Model\Settings\Contracts\SettingsManagerContract;
-use Glorand\Model\Settings\Exceptions\ModelSettingsException;
-use Glorand\Model\Settings\Managers\FieldSettingsManager;
+use Lukasss93\ModelSettings\Contracts\SettingsManagerContract;
+use Lukasss93\ModelSettings\Exceptions\ModelSettingsException;
+use Lukasss93\ModelSettings\Managers\FieldSettingsManager;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Schema;
 
 /**
  * Trait HasSettingsField
- * @package Glorand\Model\Settings\Traits
+ * @package Lukasss93\ModelSettings\Traits
  * @property array $settings
  * @property string $settingsFieldName
  * @property boolean $persistSettings
@@ -32,7 +32,7 @@ trait HasSettingsField
     }
 
     /**
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
      * @throws ModelSettingsException
      */
     public function settings(): SettingsManagerContract

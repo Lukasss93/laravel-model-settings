@@ -1,9 +1,9 @@
 <?php
 
-use Glorand\Model\Settings\Exceptions\ModelSettingsException;
-use Glorand\Model\Settings\Managers\FieldSettingsManager;
-use Glorand\Model\Settings\Tests\Models\WrongUser;
-use Glorand\Model\Settings\Tests\Models\WrongUserWithField;
+use Lukasss93\ModelSettings\Exceptions\ModelSettingsException;
+use Lukasss93\ModelSettings\Managers\FieldSettingsManager;
+use Lukasss93\ModelSettings\Tests\Models\WrongUser;
+use Lukasss93\ModelSettings\Tests\Models\WrongUserWithField;
 
 it('throws exception if model does not use HasSettings trait', function () {
     new FieldSettingsManager(WrongUser::first());

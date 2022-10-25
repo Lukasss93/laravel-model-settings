@@ -11,8 +11,8 @@
 |
 */
 
-use Glorand\Model\Settings\Tests\Models;
-use Glorand\Model\Settings\Tests\TestCase;
+use Lukasss93\ModelSettings\Tests\Models;
+use Lukasss93\ModelSettings\Tests\TestCase;
 use Illuminate\Database\Eloquent\Model;
 
 uses(TestCase::class)->in('Feature');

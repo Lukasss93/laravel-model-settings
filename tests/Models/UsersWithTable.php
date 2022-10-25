@@ -1,14 +1,14 @@
 <?php
 
-namespace Glorand\Model\Settings\Tests\Models;
+namespace Lukasss93\ModelSettings\Tests\Models;
 
-use Glorand\Model\Settings\Contracts\SettingsManagerContract;
-use Glorand\Model\Settings\Traits\HasSettingsTable;
+use Lukasss93\ModelSettings\Contracts\SettingsManagerContract;
+use Lukasss93\ModelSettings\Traits\HasSettingsTable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class UsersWithTable
- * @package Glorand\Model\Settings\Tests\Models
+ * @package Lukasss93\ModelSettings\Tests\Models
  * @method static first()
  * @method SettingsManagerContract config()
  */

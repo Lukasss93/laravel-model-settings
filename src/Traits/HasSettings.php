@@ -1,8 +1,8 @@
 <?php
 
-namespace Glorand\Model\Settings\Traits;
+namespace Lukasss93\ModelSettings\Traits;
 
-use Glorand\Model\Settings\Contracts\SettingsManagerContract;
+use Lukasss93\ModelSettings\Contracts\SettingsManagerContract;
 
 trait HasSettings
 {

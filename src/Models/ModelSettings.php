@@ -1,13 +1,13 @@
 <?php
 
-namespace Glorand\Model\Settings\Models;
+namespace Lukasss93\ModelSettings\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
  * Class ModelSettings
- * @package Glorand\Model\Settings\Models
+ * @package Lukasss93\ModelSettings\Models
  * @property array $settings
  */
 class ModelSettings extends Model

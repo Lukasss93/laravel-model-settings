@@ -1,8 +1,8 @@
 <?php
 
-use Glorand\Model\Settings\Models\ModelSettings;
-use Glorand\Model\Settings\Tests\Models\UsersWithTable;
-use Glorand\Model\Settings\Tests\Models\UsersWithTableAndDefaultSettings;
+use Lukasss93\ModelSettings\Models\ModelSettings;
+use Lukasss93\ModelSettings\Tests\Models\UsersWithTable;
+use Lukasss93\ModelSettings\Tests\Models\UsersWithTableAndDefaultSettings;
 
 beforeEach(function () {
     $this->testArray = [

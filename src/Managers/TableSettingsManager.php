@@ -1,20 +1,20 @@
 <?php
 
-namespace Glorand\Model\Settings\Managers;
+namespace Lukasss93\ModelSettings\Managers;
 
-use Glorand\Model\Settings\Contracts\SettingsManagerContract;
-use Glorand\Model\Settings\Models\ModelSettings;
+use Lukasss93\ModelSettings\Contracts\SettingsManagerContract;
+use Lukasss93\ModelSettings\Models\ModelSettings;
 
 /**
  * Class TableSettingsManager
- * @package Glorand\Model\Settings\Managers
- * @property  \Illuminate\Database\Eloquent\Model|\Glorand\Model\Settings\Traits\HasSettingsTable $model
+ * @package Lukasss93\ModelSettings\Managers
+ * @property  \Illuminate\Database\Eloquent\Model|\Lukasss93\ModelSettings\Traits\HasSettingsTable $model
  */
 class TableSettingsManager extends AbstractSettingsManager
 {
     /**
      * @param  array  $settings
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
      * @throws \Exception
      * @SuppressWarnings(PHPMD.ElseExpression)
      */

@@ -1,6 +1,6 @@
 <?php
 
-namespace Glorand\Model\Settings\Console;
+namespace Lukasss93\ModelSettings\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;

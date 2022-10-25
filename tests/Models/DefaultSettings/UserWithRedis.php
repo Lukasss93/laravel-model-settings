@@ -1,13 +1,13 @@
 <?php
 
-namespace Glorand\Model\Settings\Tests\Models\DefaultSettings;
+namespace Lukasss93\ModelSettings\Tests\Models\DefaultSettings;
 
-use Glorand\Model\Settings\Traits\HasSettingsRedis;
+use Lukasss93\ModelSettings\Traits\HasSettingsRedis;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class UserWithRedis
- * @package Glorand\Model\Settings\Tests\Models
+ * @package Lukasss93\ModelSettings\Tests\Models
  * @method static first()
  */
 class UserWithRedis extends Model

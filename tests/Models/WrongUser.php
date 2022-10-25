@@ -1,12 +1,12 @@
 <?php
 
-namespace Glorand\Model\Settings\Tests\Models;
+namespace Lukasss93\ModelSettings\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class WrongUser
- * @package Glorand\Model\Settings\Tests\Models
+ * @package Lukasss93\ModelSettings\Tests\Models
  * @method static first()
  */
 class WrongUser extends Model

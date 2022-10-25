@@ -1,6 +1,6 @@
 <?php
 
-namespace Glorand\Model\Settings\Contracts;
+namespace Lukasss93\ModelSettings\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -43,7 +43,7 @@ interface SettingsManagerContract
      * Persists a set of key => value pairs in settings.
      *
      * @param iterable $values
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
      */
     public function setMultiple(iterable $values): self;
 
@@ -53,7 +53,7 @@ interface SettingsManagerContract
      * Delete an item by its unique path.
      *
      * @param string|null $path
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
      */
     public function delete(string $path = null): self;
 
@@ -61,14 +61,14 @@ interface SettingsManagerContract
      * Deletes multiple setting items in a single operation.
      *
      * @param iterable $paths a list of string-based paths to be deleted
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
      */
     public function deleteMultiple(iterable $paths): self;
 
     /**
      * Wipes clean the entire settings for the model.
      *
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
      */
     public function clear(): self;
 }

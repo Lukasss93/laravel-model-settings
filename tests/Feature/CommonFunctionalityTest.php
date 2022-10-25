@@ -1,8 +1,8 @@
 <?php
 
-use Glorand\Model\Settings\Traits\HasSettingsField;
-use Glorand\Model\Settings\Traits\HasSettingsRedis;
-use Glorand\Model\Settings\Traits\HasSettingsTable;
+use Lukasss93\ModelSettings\Traits\HasSettingsField;
+use Lukasss93\ModelSettings\Traits\HasSettingsRedis;
+use Lukasss93\ModelSettings\Traits\HasSettingsTable;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Validation\ValidationException;
 use Lunaweb\RedisMock\MockPredisConnection;

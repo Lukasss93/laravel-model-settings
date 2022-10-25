@@ -1,14 +1,14 @@
 <?php
 
-namespace Glorand\Model\Settings\Traits;
+namespace Lukasss93\ModelSettings\Traits;
 
-use Glorand\Model\Settings\Contracts\SettingsManagerContract;
-use Glorand\Model\Settings\Managers\RedisSettingsManager;
+use Lukasss93\ModelSettings\Contracts\SettingsManagerContract;
+use Lukasss93\ModelSettings\Managers\RedisSettingsManager;
 use Illuminate\Support\Facades\Redis;
 
 /**
  * Trait HasSettingsRedis
- * @package Glorand\Model\Settings\Traits
+ * @package Lukasss93\ModelSettings\Traits
  * @property array $settings
  */
 trait HasSettingsRedis
@@ -16,8 +16,8 @@ trait HasSettingsRedis
     use HasSettings;
 
     /**
-     * @return \Glorand\Model\Settings\Contracts\SettingsManagerContract
-     * @throws \Glorand\Model\Settings\Exceptions\ModelSettingsException
+     * @return \Lukasss93\ModelSettings\Contracts\SettingsManagerContract
+     * @throws \Lukasss93\ModelSettings\Exceptions\ModelSettingsException
      */
     public function settings(): SettingsManagerContract
     {

@@ -1,7 +1,7 @@
 <?php
 
-use Glorand\Model\Settings\Exceptions\ModelSettingsException;
-use Glorand\Model\Settings\Tests\Models\UserWithField as User;
+use Lukasss93\ModelSettings\Exceptions\ModelSettingsException;
+use Lukasss93\ModelSettings\Tests\Models\UserWithField as User;
 
 beforeEach(function () {
     $this->model = User::first();

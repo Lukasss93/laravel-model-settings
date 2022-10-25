@@ -1,9 +1,9 @@
 <?php
 
-namespace Glorand\Model\Settings;
+namespace Lukasss93\ModelSettings;
 
-use Glorand\Model\Settings\Console\CreateSettingsFieldForModel;
-use Glorand\Model\Settings\Console\CreateSettingsTable;
+use Lukasss93\ModelSettings\Console\CreateSettingsFieldForModel;
+use Lukasss93\ModelSettings\Console\CreateSettingsTable;
 use Illuminate\Support\ServiceProvider;
 
 class ModelSettingsServiceProvider extends ServiceProvider
