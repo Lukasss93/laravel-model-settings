@@ -3,13 +3,7 @@
 namespace Glorand\Model\Settings\Traits;
 
 use Glorand\Model\Settings\Contracts\SettingsManagerContract;
-use Illuminate\Support\Arr;
 
-/**
- * @property array $settingsRules
- * @property array $defaultSettings
- * @SuppressWarnings(PHPMD.StaticAccess)
- */
 trait HasSettings
 {
     public function settingsRules(): array
@@ -17,16 +11,8 @@ trait HasSettings
         return [];
     }
 
-    public function getDefaultSettings(): array
+    public function defaultSettings(): array
     {
-        if (property_exists($this, 'defaultSettings')
-            && is_array($this->defaultSettings)) {
-            return Arr::wrap($this->defaultSettings);
-        } elseif (($defaultSettings = config('model_settings.defaultSettings.'.$this->getTable()))
-            && is_array($defaultSettings)) {
-            return Arr::wrap($defaultSettings);
-        }
-
         return [];
     }
 
@@ -58,7 +44,7 @@ trait HasSettings
     public function initSettings(): void
     {
         if (!$this->modelSettings()->exists()) {
-            $this->settings()->apply($this->getDefaultSettings());
+            $this->settings()->apply($this->defaultSettings());
         }
     }
 

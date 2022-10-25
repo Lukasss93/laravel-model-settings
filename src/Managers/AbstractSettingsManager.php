@@ -86,7 +86,7 @@ abstract class AbstractSettingsManager implements SettingsManagerContract
      */
     public function allFlattened(): array
     {
-        $flattenedDefaultSettings = static::dotFlatten($this->model->getDefaultSettings());
+        $flattenedDefaultSettings = static::dotFlatten($this->model->defaultSettings());
         $flattenedSettingsValue = static::dotFlatten($this->model->getSettingsValue());
 
         return array_merge($flattenedDefaultSettings, $flattenedSettingsValue);
