@@ -1,102 +1,64 @@
-<p align="center">
-<img height="100px" alt="laravel" src="https://user-images.githubusercontent.com/883989/60343130-f5021800-99bb-11e9-8a03-fe11746a86c2.png">
-</p>
+This package is a fork of [glorand/laravel-model-settings](https://github.com/glorand/laravel-model-settings)
+with some breaking changes to make it more flexible and easier to use.
 
-<h6 align="center">
-    Model Settings for your Laravel app
-</h6>
+![logo](https://banners.beyondco.de/Laravel%20Model%20Settings.png?theme=dark&packageManager=composer+require&packageName=lukasss93%2Flaravel-model-settings&pattern=architect&style=style_1&description=Model+Settings+for+your+Laravel+app&md=1&showWatermark=0&fontSize=100px&images=cog)
 
-<p align="center">
-<a href="https://packagist.org/packages/glorand/laravel-model-settings/stats">
-<img src="https://img.shields.io/packagist/dt/glorand/laravel-model-settings?style=for-the-badge&color=red" alt="Total Downloads"/>
-</a>
-<br />
-<a href="https://packagist.org/packages/glorand/laravel-model-settings">
- <img src="https://img.shields.io/packagist/v/glorand/laravel-model-settings" alt="Latest Stable Version">
-</a>
-<a href="https://github.com/glorand/laravel-model-settings/actions">
-<img src="https://github.com/glorand/laravel-model-settings/workflows/Test/badge.svg" alt="'Github Actions" />
-</a>
- <a href="https://travis-ci.com/glorand/laravel-model-settings">
- <img src="https://travis-ci.com/glorand/laravel-model-settings.svg?branch=master" alt="Build Status">
- </a>
- <a href="LICENSE.md">
- <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat" alt="Software License">
- </a>
-<a href="https://codeclimate.com/github/glorand/laravel-model-settings/maintainability">
-<img src="https://api.codeclimate.com/v1/badges/ea0941afe155dd14f5d8/maintainability" alt="maintainability" />
-</a>
-<br />
-<a href="https://github.styleci.io/repos/163381474">
- <img src="https://github.styleci.io/repos/163381474/shield?branch=master&style=flat" alt="StyleCI">
- </a>
-<a href="https://scrutinizer-ci.com/g/glorand/laravel-model-settings/">
- <img src="https://scrutinizer-ci.com/g/glorand/laravel-model-settings/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality">
- </a>
- <a href="https://scrutinizer-ci.com/g/glorand/laravel-model-settings/?branch=master">
- <img src="https://scrutinizer-ci.com/g/glorand/laravel-model-settings/badges/coverage.png?b=master" alt="Scrutinizer Code Coverage"/>
- </a>
- <br />
- <a title="MadeWithLaravel.com Shield" href="https://madewithlaravel.com/p/laravel-model-settings/shield-link"> <img src="https://madewithlaravel.com/storage/repo-shields/1716-shield.svg"/></a>
-<a title="PHP Version" href="#"><img src="https://img.shields.io/packagist/php-v/glorand/laravel-model-settings" alt="PHP Version" /></a>
-</p>
+# Laravel Model Settings
 
-The package requires PHP 7.3+ and follows the FIG standards PSR-1, PSR-2, PSR-4 and PSR-12
+![version](https://img.shields.io/packagist/v/glorand/laravel-model-settings)
+![downloads](https://img.shields.io/packagist/dt/glorand/laravel-model-settings?color=red)
+![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
+![php](https://img.shields.io/packagist/php-v/glorand/laravel-model-settings)
+
+![tests](https://github.com/glorand/laravel-model-settings/workflows/Test/badge.svg)
+![maintainability](https://api.codeclimate.com/v1/badges/ea0941afe155dd14f5d8/maintainability)
+![coverage](https://scrutinizer-ci.com/g/glorand/laravel-model-settings/badges/coverage.png?b=master)
+
+> Model Settings for your Laravel app
+
+The package requires PHP ^8.0 and follows the FIG standards PSR-1, PSR-2, PSR-4 and PSR-12
 to ensure a high level of interoperability between shared PHP.
 
-Bug reports, feature requests, and pull requests can be submitted by following our [Contribution Guide](CONTRIBUTING.md).
+Bug reports, feature requests, and pull requests can be submitted by following our [Contribution Guide](CONTRIBUTING.md)
+.
 
-## Table of contents
-- [Installation](#installation)
-- [Updating your Eloquent Models](#update_models)
-    - [Option 1 - `HasSettingsField` trait](#update_models_1)
-    - [Option 2 - `HasSettingsTable` trait](#update_models_2)
-    - [Option 3 - `HasSettingsRedis` trait](#update_models_3)
-- [Default Settings](#default_settings)
-- [Usage](#usage)
-    - [Check id the settings for the entity is empty (exist)](#empty)
-    - [Check settings (exist)](#exist)
-    - [Get all model's settings](#get_all)
-    - [Get a specific setting](#get)
-    - [Add / Update setting](#add_update)
-    - [Check if the model has a specific setting](#check)
-    - [Remove a setting from a model](#remove)
-    - [Persistence](#persistence)
-    - [Using another method name other than `settings()`](#invokeSettingsBy)
-    - [Validation system for settings data](#validation)
- - [Changelog](#changelog)
- - [Contributing](#contributing)
-- [License](#license)
+## ⚠️ Forked repository
 
-## Installation <a name="installation"></a>
+This package is a fork of [glorand/laravel-model-settings](https://github.com/glorand/laravel-model-settings) and
+contains some breaking changes to make it more flexible and easier to use.
+
+### List of changes between this package and the original one:
+
+- Converted `defaultSettings` property to **method**
+- Converted `settingsRules` property to **method**
+- Removed `defaultSettings` from `model_settings.php` config file
+- Converted **PHPUnit** tests to **PestPHP** tests
+- Renamed `Glorand\Model\Settings` namespace to `Lukasss93\ModelSettings`
+
+## 🚀 Installation
+
 ```shell
-$ composer require glorand/laravel-model-settings
+composer require lukasss93/laravel-model-settings
 ```
 
+## ⚙ Publishing the config file
+
+Publishing the config file is optional:
+
+```shell
+php artisan vendor:publish --provider="Lukasss93\ModelSettings\ModelSettingsServiceProvider"
 ```
-{
-    "require": {
-        "glorand/laravel-model-settings": "^4.0"
-    }
-}
-```
 
-## Env (config) variables **(.env file)**
+## 🌈 Update your Eloquent Models
 
-Default name for the settings field - when you use the `HasSettingsField`
-
-`MODEL_SETTINGS_FIELD_NAME=settings`
-
-Default name for the settings table - when you use the `HasSettingsTable`
-
-`MODEL_SETTINGS_TABLE_NAME=model_settings`
-
-## Updating your Eloquent Models <a name="update_models"></a>
 Your models should use the `HasSettingsField` or `HasSettingsTable` trait.
 
-#### Option 1 - `HasSettingsField` trait <a name="update_models_1"></a>
+#### Option 1 - `HasSettingsField` trait
+
 Run the `php artisan model-settings:model-settings-field` in order to create a migration file for a table.\
-This command will create a json field (default name `settings`, from config) for the mentioned table.
+This command will create a json field (default name `settings`, from config) for the mentioned table.\
+The default name of the field is `settings`; change the config or env value `MODEL_SETTINGS_FIELD_NAME` if you want to
+rewrite the default name (**before you run the command!**)
 
 You can choose another than default, in this case you have to specify it in you model.
 ```php
@@ -105,7 +67,7 @@ public $settingsFieldName = 'user_settings';
 
 Complete example:
 ```php
-use Glorand\Model\Settings\Traits\HasSettingsField;
+use Lukasss93\ModelSettings\Traits\HasSettingsField;
 
 class User extends Model
 {
@@ -113,18 +75,15 @@ class User extends Model
 
     //define only if you select a different name from the default
     public $settingsFieldName = 'user_settings';
-
-    //define only if the model overrides the default connection
-    protected $connection = 'mysql';
-
 }
 ```
-#### Option 2 - `HasSettingsTable` trait <a name="update_models_2"></a>
+
+#### Option 2 - `HasSettingsTable` trait
 Run before the command `php artisan model-settings:model-settings-table`.\
 The command will copy for you the migration class to create the table where the setting values will be stored.\
 The default name of the table is `model_settings`; change the config or env value `MODEL_SETTINGS_TABLE_NAME` if you want to rewrite the default name (**before you run the command!**)
 ```php
-use Glorand\Model\Settings\Traits\HasSettingsTable;
+use Lukasss93\ModelSettings\Traits\HasSettingsTable;
 
 class User extends Model
 {
@@ -132,9 +91,9 @@ class User extends Model
 }
 ```
 
-#### Option 3 - `HasSettingsRedis` trait <a name="update_models_3"></a>
+#### Option 3 - `HasSettingsRedis` trait
 ```php
-use Glorand\Model\Settings\Traits\HasSettingsRedis;
+use Lukasss93\ModelSettings\Traits\HasSettingsRedis;
 
 class User extends Model
 {
@@ -142,64 +101,29 @@ class User extends Model
 }
 ```
 
-## Default settings <a name="default_settings"></a>
-
-You can set default configs for a table in model_settings.php config file
-
-```php
-return [
-    // start other config options
-
-    // end other config options
-
-    // defaultConfigs
-    'defaultSettings' => [
-        'users' => [
-            'key_1' => 'val_1',
-        ]
-    ]
-];
-```
-
-Or in your model itself:
-
-```php
-use Glorand\Model\Settings\Traits\HasSettingsTable;
-
-class User extends Model
-{
-    public $defaultSettings = [
-        'key_1' => 'val_1',
-    ];
-}
-```
-
-> Please note that if you define settings in the model, the settings from configs will have no effect, they will just be ignored.
-
-
-## Usage <a name="usage"></a>
+## 👓 Usage
 
 ```php
 $user = App\User::first();
 ```
 
-#### Check id the settings for the entity is empty <a name="empty"></a>
+#### Check id the settings for the entity is empty
 ```php
 $user->settings()->empty();
 ```
 
-#### Check settings (exist) <a name="exist"></a>
+#### Check settings (exist)
 ```php
 $user->settings()->exist();
 ```
 
-#### Get all model's settings <a name="get_all"></a>
+#### Get all model's settings
 ```php
 $user->settings()->all();
 $user->settings()->get();
 ```
 
-#### Get a specific setting <a name="get"></a>
+#### Get a specific setting
 ```php
 $user->settings()->get('some.setting');
 $user->settings()->get('some.setting', 'default value');
@@ -213,7 +137,7 @@ $user->settings()->getMultiple(
 );
 ```
 
-#### Add / Update setting <a name="add_update"></a>
+#### Add / Update setting
 ```php
 $user->settings()->apply((array)$settings);
 $user->settings()->set('some.setting', 'new value');
@@ -225,12 +149,12 @@ $user->settings()->setMultiple([
 ]);
 ```
 
-#### Check if the model has a specific setting <a name="check"></a>
+#### Check if the model has a specific setting
 ```php
 $user->settings()->has('some.setting');
 ```
 
-#### Remove a setting from a model <a name="remove"></a>
+#### Remove a setting from a model
 ```php
 $user->settings()->delete('some.setting');
 //multiple
@@ -242,7 +166,7 @@ $user->settings()->deleteMultiple([
 $user->settings()->clear();
 ```
 
-#### Persistence for settings field <a name="persistence"></a>
+### ⬇ Persistence for settings field
 In case of field settings the auto-save is configurable.
 
 **The ``default`` value is ``true``**
@@ -256,59 +180,78 @@ protected $persistSettings = true; //boolean
 MODEL_SETTINGS_PERSISTENT=true
 ```
 - Config value - model settings config file
+
  ```php
 'settings_persistent' => env('MODEL_SETTINGS_PERSISTENT', true),
 ```
+
 If the persistence is `false` you have to save the model after the operation.
 
-### Using another method name other than `settings()` <a name="invokeSettingsBy"></a>
+### 🛠️ Using another method name other than `settings()`
+
 If you prefer to use another name other than `settings` ,
-you can do so by defining a `$invokeSettingsBy` property. 
+you can do so by defining a `$invokeSettingsBy` property.
 This forward calls (such as `configurations()`) to the `settings()` method.
 
-### Validation system for settings data <a name="validation></a>
-When you're using the set() or apply()|update() methods thrown an exception when you break a rule.
-You can define rules on model using `$settingsRules` public property, and the rules array definition is identical with
-the Laravel default validation rules. ([see Laravel rules](https://laravel.com/docs/8.x/validation#available-validation-rules))
+### 🌠 Default settings
+
+You can set default configs for a model:
+
+```php
+use Lukasss93\ModelSettings\Traits\HasSettingsTable;
+
+class User extends Model
+{
+    use HasSettingsTable;
+    
+    public function defaultSettings(): array
+    {
+        return [
+            'foo' => 'bar',
+        ];
+    }
+}
+```
+
+### 🔍 Validation system for settings data
+
+When you're using the `set()`, `apply()`, `update()` methods thrown an exception when you break a rule.\
+You can define rules on model using `settingsRules` public method, and the rules array definition is identical with
+the Laravel default [validation rules](https://laravel.com/docs/9.x/validation#available-validation-rules).
+
 ```php
 class User extends Model
 {
     use HasSettingsTable;
 
-    public array $defaultSettings = [
-        'user' => [
-            'name' => 'Test User',
-            'email' => 'user@test.com'
-            'age' => 27,
-        ],
-        'language' => 'en',
-        'max_size' => 12,
-    ];
+    public function defaultSettings(): array
+    {
+        return [
+            'info' => [
+                'email' => 'user@test.com'
+                'age' => 27,
+            ],
+            'language' => 'en',
+            'max_size' => 12,
+        ];
+    }
 
-    // settings rules
-    public array $settingsRules = [
-        'user' => 'array',
-        'user.email' => [
-            'string',
-            'email',
-        ],
-        'user.age' => 'integer',
-        'language' => 'string|in:en,es,it|max:2',
-        'max_size' => 'int|min:5|max:15',
-    ];
+    public function settingsRules(): array
+    {
+        return [
+            'info' => 'array',
+            'info.email' => ['string','email'],
+            'info.age' => 'integer',
+            'language' => 'string|in:en,es,it|max:2',
+            'max_size' => 'int|min:5|max:15',
+        ];
+    }
 }
 
 ```
 
-## Changelog <a name="changelog"></a>
+## 📃 Changelog
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Contributing <a name="contributing"></a>
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## License <a name="license"></a>
+## 📖 License
 The MIT License (MIT). Please see [LICENSE](LICENSE) for more information.
-
-## Related Stuff
-- [LaraNews - Laravel Model Settings](https://laravel-news.com/laravel-model-settings)
-- [made with Laravel - Laravel Model Settings](https://madewithlaravel.com/laravel-model-settings)
