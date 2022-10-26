@@ -1,18 +1,15 @@
-This package is a fork of [glorand/laravel-model-settings](https://github.com/glorand/laravel-model-settings)
-with some breaking changes to make it more flexible and easier to use.
-
 ![logo](https://banners.beyondco.de/Laravel%20Model%20Settings.png?theme=dark&packageManager=composer+require&packageName=lukasss93%2Flaravel-model-settings&pattern=architect&style=style_1&description=Model+Settings+for+your+Laravel+app&md=1&showWatermark=0&fontSize=100px&images=cog)
 
 # Laravel Model Settings
 
-![version](https://img.shields.io/packagist/v/glorand/laravel-model-settings)
-![downloads](https://img.shields.io/packagist/dt/glorand/laravel-model-settings?color=red)
-![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
-![php](https://img.shields.io/packagist/php-v/glorand/laravel-model-settings)
+![version](https://img.shields.io/packagist/v/lukasss93/laravel-model-settings)
+![downloads](https://img.shields.io/packagist/dt/lukasss93/laravel-model-settings?color=red)
+![license](https://img.shields.io/github/license/lukasss93/laravel-model-settings)
+![php](https://img.shields.io/packagist/php-v/lukasss93/laravel-model-settings)
 
-![tests](https://github.com/glorand/laravel-model-settings/workflows/Test/badge.svg)
+![tests](https://github.com/lukasss93/laravel-model-settings/workflows/Test/badge.svg)
 ![maintainability](https://api.codeclimate.com/v1/badges/ea0941afe155dd14f5d8/maintainability)
-![coverage](https://scrutinizer-ci.com/g/glorand/laravel-model-settings/badges/coverage.png?b=master)
+![coverage](https://scrutinizer-ci.com/g/lukasss93/laravel-model-settings/badges/coverage.png?b=master)
 
 > Model Settings for your Laravel app
 
