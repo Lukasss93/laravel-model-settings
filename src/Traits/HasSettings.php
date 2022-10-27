@@ -47,11 +47,4 @@ trait HasSettings
             $this->settings()->apply($this->defaultSettings());
         }
     }
-
-    public static function initSettingsForAll(): void
-    {
-        static::all()->each(function ($model) {
-            $model->initSettings();
-        });
-    }
 }
