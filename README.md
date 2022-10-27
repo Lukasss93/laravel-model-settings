@@ -7,9 +7,9 @@
 ![license](https://img.shields.io/github/license/lukasss93/laravel-model-settings)
 ![php](https://img.shields.io/packagist/php-v/lukasss93/laravel-model-settings)
 
-![tests](https://github.com/lukasss93/laravel-model-settings/workflows/Test/badge.svg)
-![maintainability](https://api.codeclimate.com/v1/badges/ea0941afe155dd14f5d8/maintainability)
-![coverage](https://scrutinizer-ci.com/g/lukasss93/laravel-model-settings/badges/coverage.png?b=master)
+[![Test](https://github.com/Lukasss93/laravel-model-settings/actions/workflows/test.yml/badge.svg)](https://github.com/Lukasss93/laravel-model-settings/actions/workflows/test.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/667bebe4a32be08138a2/maintainability)](https://codeclimate.com/github/Lukasss93/laravel-model-settings/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/667bebe4a32be08138a2/test_coverage)](https://codeclimate.com/github/Lukasss93/laravel-model-settings/test_coverage)
 
 > Model Settings for your Laravel app
 
