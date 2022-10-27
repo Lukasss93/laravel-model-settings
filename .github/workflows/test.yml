@@ -86,5 +86,5 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_REPORTER_ID }}
         with:
-          coverageCommand: composer run-script test-coverage
+          coverageCommand: composer run-script coverage
           coverageLocations: ${{github.workspace}}/coverage.xml:clover
