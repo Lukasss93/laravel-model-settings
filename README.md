@@ -16,7 +16,7 @@
 The package requires PHP ^8.0 and follows the FIG standards PSR-1, PSR-2, PSR-4 and PSR-12
 to ensure a high level of interoperability between shared PHP.
 
-Bug reports, feature requests, and pull requests can be submitted by following our [Contribution Guide](CONTRIBUTING.md)
+Bug reports, feature requests, and pull requests can be submitted by following our [Contribution Guide](.github/CONTRIBUTING.md)
 .
 
 ## ⚠️ Forked repository
