@@ -16,8 +16,7 @@
 The package requires PHP ^8.0 and follows the FIG standards PSR-1, PSR-2, PSR-4 and PSR-12
 to ensure a high level of interoperability between shared PHP.
 
-Bug reports, feature requests, and pull requests can be submitted by following our [Contribution Guide](.github/CONTRIBUTING.md)
-.
+Bug reports, feature requests, and pull requests can be submitted by following our [Contribution Guide](.github/CONTRIBUTING.md).
 
 ## ⚠️ Forked repository
 
@@ -26,11 +25,13 @@ contains some breaking changes to make it more flexible and easier to use.
 
 ### List of changes between this package and the original one:
 
+- Added ability to initialize settings at model creation
+- Readded **Laravel 8** support
 - Converted `defaultSettings` property to **method**
 - Converted `settingsRules` property to **method**
-- Removed `defaultSettings` from `model_settings.php` config file
 - Converted **PHPUnit** tests to **PestPHP** tests
 - Renamed `Glorand\Model\Settings` namespace to `Lukasss93\ModelSettings`
+- Removed `defaultSettings` from `model_settings.php` config file
 
 ## 🚀 Installation
 
@@ -200,6 +201,28 @@ use Lukasss93\ModelSettings\Traits\HasSettingsTable;
 class User extends Model
 {
     use HasSettingsTable;
+    
+    public function defaultSettings(): array
+    {
+        return [
+            'foo' => 'bar',
+        ];
+    }
+}
+```
+
+### 🎉 Initializing settings at model creation
+
+You can initialize settings at model creation by defining a `initSettings` property in your model:
+
+```php
+use Lukasss93\ModelSettings\Traits\HasSettingsTable;
+
+class User extends Model
+{
+    use HasSettingsTable;
+    
+    public bool $initSettings = true;
     
     public function defaultSettings(): array
     {
