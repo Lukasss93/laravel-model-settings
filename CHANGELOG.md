@@ -2,6 +2,20 @@
 
 All notable changes to `glorand/laravel-model-settings` will be documented in this file
 
+## 6.0.0 - 2022-10-27
+### Added
+- Added ability to initialize settings at model creation
+- Readded **Laravel 8** support
+
+### Changed
+- Converted `defaultSettings` property to **method**
+- Converted `settingsRules` property to **method**
+- Converted **PHPUnit** tests to **PestPHP** tests
+- Renamed `Glorand\Model\Settings` namespace to `Lukasss93\ModelSettings`
+
+### Removed
+- Removed `defaultSettings` from `model_settings.php` config file
+
 ## 5.0.0 - 2022-02-10
 ### Added
 - Add support for Laravel 9 by @belzaaron
