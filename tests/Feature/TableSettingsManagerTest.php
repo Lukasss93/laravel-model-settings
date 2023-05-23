@@ -59,7 +59,7 @@ test('settings table count', function () {
 });
 
 test('add eager constraints', function () {
-    set_error_handler(static function (int $errno, string $errstr): never {
+    set_error_handler(static function (int $errno, string $errstr) {
         throw new Exception($errstr, $errno);
     }, E_USER_WARNING);
     
