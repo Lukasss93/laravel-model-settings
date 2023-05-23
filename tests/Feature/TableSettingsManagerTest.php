@@ -59,12 +59,16 @@ test('settings table count', function () {
 });
 
 test('add eager constraints', function () {
+    set_error_handler(static function (int $errno, string $errstr): never {
+        throw new Exception($errstr, $errno);
+    }, E_USER_WARNING);
+    
     $this->model = UsersWithTableAndDefaultSettings::first();
 
     $this->model->settings()->apply($this->testArray);
     expect(ModelSettings::all()->count())->toBe(1);
 
-    $this->expectErrorMessage('addEagerConstraints');
+    $this->expectExceptionMessage('addEagerConstraints');
 
     $this->model->load('settings')->settings()->set('test', 'test');
     $this->model->load('modelSettings')->settings()->set('test', 'test');
