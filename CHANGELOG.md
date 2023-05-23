@@ -2,6 +2,10 @@
 
 All notable changes to `glorand/laravel-model-settings` will be documented in this file
 
+## 6.1.0 - 2023-05-23
+### Added
+- Added Laravel 10 support
+
 ## 6.0.0 - 2022-10-27
 ### Added
 - Added ability to initialize settings at model creation
